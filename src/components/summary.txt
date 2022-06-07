@@ -1,0 +1,234 @@
+<--------------- Heading  --------------->
+ <Typography variant='h1'>h1 Heading</Typography>
+ <Typography variant='subtitle1'>h6 Heading</Typography>
+
+
+<---------------paragraph --------------->
+body1 ==> is defaulf value
+<Typography variant='body1'>Lorem ipsum dolor sit.</Typography>
+<Typography variant='body2'>Lorem ipsum dolor sit.</Typography>
+
+
+<---------------margin --------------->
+<Typography gutterBottom>h3 Heading</Typography>
+
+
+<---------------Button --------------->
+Default ===> <Button>See More</Button> or  <Button variant='text'>See More</Button>
+background Color ===> <Button variant='contained'>See More</Button>
+border ===> <Button variant='outlined'>See More</Button>
+
+<---------------Button color from palette --------------->
+color ==> {primary , secondary ,error,warning,info,success}
+<Button variant='contained' color='primary'>Primary</Button>
+
+<---------------Button size --------------->
+size ==> {small,medium,large}
+<Button variant='contained' size='small'>small</Button>
+
+<---------------give space in multiple button --------------->
+<Stack spacing={2} direction='row'>
+    <Button variant='text' href='https://google.com'></Button>
+    <Button variant='contained'>See More</Button>
+    <Button variant='outlined'>See More</Button>
+</Stack>
+
+
+<---------------add material icon in button --------------->
+<Button variant='contained' startIcon={<Send />}>Send</Button>
+
+<---------------only add icon in Button --------------->
+<IconButton aria-label='send'><Send /></IconButton>
+
+<---------remove hover shadow and click background of button ------------>
+ <Button disableElevation>Send</Button>
+ <Button disableRipple>Send</Button>
+
+<-------------group button-------------->
+variant ===> {contained ,outlined,text}
+<ButtonGroup variant='contained'>
+    <Button>Left</Button>
+    <Button>center</Button>
+    <Button>right</Button>
+</ButtonGroup>
+
+
+<-------------Toogle button group-------------->
+<ToggleButtonGroup aria-label='text formatting' value={formats} onChange={handleFormateChnage} size='large' color='error' orientation='vertical' exclusive>
+    <ToggleButton value='bold' aria-label='bold'> <FormatBold /></ToggleButton>
+    <ToggleButton value='italic' aria-label='italic'> <FormatItalic /></ToggleButton>
+    <ToggleButton value='underlined' aria-label='underline'> <FormatUnderlined /></ToggleButton>
+</ToggleButtonGroup>
+
+<-------------inputFiled-------------->
+defaulf ===>  <TextField label='name' />
+
+variant ===> {outlined, filled,standard }
+<TextField label='name' variant='outlined' />
+
+<-------------inputFiled size and color -------------->
+<TextField label='name secondary' size='small' color='secondary' />
+
+<TextField
+  label='Password'
+  type='password'
+  required
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+  error={!value}
+  helperText={!value ? "Required" : "Do not share your password"}
+  InputProps={{
+    endAdornment: (
+      <InputAdornment position='end'>
+        <RemoveRedEyeIcon />
+      </InputAdornment>
+    ),
+  }}
+/>
+
+<-------------select drop Down -------------->
+<Box width='250px'>
+    <TextField label='Select Country' select fullWidth>
+      <MenuItem value='NEP'>Nepal </MenuItem>
+      <MenuItem value='IN'>India </MenuItem>
+      <MenuItem value='USA'>USA </MenuItem>
+      <MenuItem value='CH'>China </MenuItem>
+    </TextField>
+</Box>
+
+<-------------Radio Button -------------->
+<RadioGroup name='job-experience-group' aria-label='job-experience-group-label'>
+   <FormControlLabel control={<Radio color='secondary' size='small'  />} label='0-2' value='0-2' />
+</RadioGroup>
+
+<-------------checkbox -------------->
+<FormControlLabel label='I accept terms and condition' control={<Checkbox />}><FormControlLabel>
+
+<-------------add icon in checkbox-------------->
+<Checkbox icon={<BookmarkBorder />} checkedIcon={<Bookmark />} />
+
+<-------------group checkbox -------------->
+<FormGroup>
+    <FormControlLabel label='HTML' value='html' control={<Checkbox />}></FormControlLabel>
+    <FormControlLabel label='CSS' value='css' control={<Checkbox />}></FormControlLabel>
+    <FormControlLabel label='Javascript' value='Javascript' control={<Checkbox />}><FormControlLabel>
+</FormGroup>
+
+<-------------swicth -------------->
+<FormControlLabel label='Dark Mode' control={<Switch />}></FormControlLabel>
+ 
+<-------------rating -------------->
+ <Rating />
+
+ 
+<-------------Box -------------->
+Box ==> is div tags
+component = {section,span,p,label.......}
+
+<Box component='span'>code</Box>
+
+<-------------Stack -------------->
+bascilly it is work as a flex
+arrange the our content 
+
+
+<Stack sx={{ border: "1px solid black" }} direction='row' spacing={2}>
+  <Box height='100px' width='100px' color='whitbgcolor='success.light' p={2}>
+    Simple Box
+  </Box>
+  <Box height='100px' width='100px' color='whitbgcolor='error.light' p={2}>
+    Simple Box
+  </Box>
+</Stack>
+
+<-------------Grid -------------->
+xs ===> equal divide
+xs ="auto"
+
+---- <Grid container spacing={2}> ----
+spacing={2} ===> 16px i.e grid gap
+rowSpacing
+columnSpacing
+------------------------------
+ <Grid container spacing={2}>
+  <Grid item xs>
+    <Box bgcolor='primary.light' p={2}>
+      Item 1
+    </Box>
+  </Grid>
+</Grid>
+
+<-------------Paper -------------->
+Paper is used to build for card components
+elevation => bxo-shadow 
+<Paper sx={{ padding: "132px" }} elevation={20}></Paper>
+
+<-------------Card -------------->
+<Box width='300px'>
+    <Card>
+      <CardContent>
+      </CardContent>
+    </Card>
+</Box>
+
+<-------------Card button -------------->
+<CardActions>
+  <Button>Share</Button>
+  <Button>Learn More</Button>
+</CardActions>
+
+<-------------Image Set -------------->
+<CardMedia component='img' height='140px' image='https://source.unsplash.com/random' alt='unsplash image'></CardMedia>
+
+<-------------Image list -------------->
+variant= {none,woven ,masonry}
+
+<ImageList variant='woven' sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+  {data.map((item) => (
+    <ImageListItem key={item.img}>
+      <img src={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=alt={item.title} loading='lazy' />
+      <ImageListItemBar title={item.title} />
+    </ImageListItem>
+  ))}
+</ImageList>
+<-------------Card -------------->
+
+<-------------Avatar -------------->
+<Stack direction='row' spacing={1} m={5}>
+  <AvatarGroup max={3}>
+    <Avatar sx={{ bgcolor: "primary.light" }}>SU</Avatar>
+    <Avatar variant='square' sx={{ bgcolor: "primary.light", width: 50, height: 50 }}>SU</Avatar>
+  </AvatarGroup>
+</Stack>
+
+
+<-------------Avatar -------------->
+showZero
+max={999}
+variant='dot'
+invisible
+
+<Badge badgeContent={5} color='primary'>
+  <Mail />
+</Badge>
+<-------------Avatar -------------->
+
+
+<-------------Progress -------------->
+<CircularProgress color='error' variant='determinate' value={60} />
+<LinearProgress color='error' variant='determinate' value={60} />
+
+
+<-------------Skeleton -------------->
+<Skeleton variant='rectangular' width={240} height={125} animation='wave' />
+
+
+<-------------Responsive -------------->
+<Box sx={{ height: "300px", width: { 
+   xs: 100,  // 0
+    sm: 200, // 600
+    md: 300, // 900
+	  lg: 400, // 1200
+    xs: 500  // 1536
+  }, bgcolor: "primary.main" }}>
+</Box>
